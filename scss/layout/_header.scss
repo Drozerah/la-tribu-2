@@ -3,14 +3,15 @@
 // -----------------------------------------------------------------------------
 
 body {
+
   > header {
     display: flex;
+    justify-content: center;
     align-items: center;
-    height: var(--header-height);
     width: 100%;
     position: fixed;
-    background-color: var(--clr-white);
     z-index: 100;
+    background-color: var(--clr-white);
 
     &:after {
       content: "";
@@ -19,51 +20,57 @@ body {
       left: auto;
       right: auto;
       height: 1px;
-      width: calc(100% - (var(--container-padding-left-right) * 2));
+      width: calc(var(--container-max-width) - (var(--container-padding-left-right) * 2));
       border-top: 1px solid var(--clr-light-gray);
     }
 
-    > a {
-      height: 63px;
-      min-width: 58px;
-      margin-right: auto;
-      h1 {
-        height: 100%;
-        background-image: url("/img/logo.webp");
-        background-repeat: no-repeat;
-        text-indent: -9999px;
-      }
-    }
-
-    nav {
+    .container {
       display: flex;
-      // display: none; // DEV
       align-items: center;
+      height: var(--header-height);
+      background-color: var(--clr-white);
       width: 100%;
-      max-width: 552px;
-      margin-left: 18px;
-      margin-right: 20px;
+      // border-bottom: 1px solid var(--clr-light-gray);
 
-      ul {
+
+      > a {
+        height: 63px;
+        min-width: 58px;
+        margin-right: auto;
+        h1 {
+          height: 100%;
+          background-image: url("/img/logo.webp");
+          background-repeat: no-repeat;
+          text-indent: -9999px;
+        }
+      }
+
+      nav {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        list-style: none;
+        max-width: 552px;
+        margin-right: 20px;
 
-        li {
-          height: 35px;
+        ul {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          list-style: none;
 
-          a {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            padding: 0 10px;
-            text-decoration: none;
-            color: var(--clr-black);
+          li {
+            height: 35px;
 
-            &:hover {
-              text-decoration: underline;
+            a {
+              display: flex;
+              align-items: center;
+              height: 100%;
+              padding: 0 10px;
+              text-decoration: none;
+              color: var(--clr-black);
+
+              &:hover {
+                text-decoration: underline;
+              }
             }
           }
         }

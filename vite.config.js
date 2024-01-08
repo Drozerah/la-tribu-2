@@ -20,6 +20,7 @@ export default defineConfig({
   },
   plugins: isProduction() ? [ViteMinifyPlugin({})] : [], // minify ouput html or not
   css: {
+    devSourcemap: true,
     postcss: {
       plugins: [
         autoprefixer({flexbox:true}),
