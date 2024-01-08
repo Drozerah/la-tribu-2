@@ -2,10 +2,13 @@ import './scss/main.scss'
 
 import {
   initMobileNav,
-  initSpiceElement
+  initSpiceElement,
+  initTestimonyCards
 } from './js/services'
 
 initMobileNav()
 
 const testimonyElement = document.querySelector('#testimony');
 initSpiceElement(testimonyElement);
+
+initTestimonyCards()

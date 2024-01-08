@@ -122,3 +122,45 @@ export function initSpiceElement(element, offset = 190) {
     setSpiceElementLeftPosition(element);
   });
 }
+
+/**
+ * Initialise l'interaction des cartes de témoignage.
+ * @function
+ */
+export function initTestimonyCards() {
+  /**
+   * Conteneur des cartes de témoignage.
+   * @type {HTMLElement}
+   */
+  const cardsContainer = document.getElementById('testimony-cards');
+
+  /**
+   * Carte de témoignage de petite taille.
+   * @type {HTMLElement}
+   */
+  const cardSmall = document.querySelector('.card-small');
+
+  /**
+   * Bascule la classe 'hovered' sur un élément.
+   * @param {HTMLElement} element - L'élément sur lequel basculer la classe.
+   */
+  const toggleClass = (element) => {
+    element.classList.toggle('hovered');
+  };
+
+  /**
+   * Gère l'événement lorsque la souris survole la carte de petite taille.
+   * Ajoute ou supprime la classe 'hovered' sur le conteneur des cartes.
+   */
+  cardSmall.addEventListener('mouseover', function () {
+    toggleClass(cardsContainer);
+  });
+
+  /**
+   * Gère l'événement lorsque la souris quitte la carte de petite taille.
+   * Ajoute ou supprime la classe 'hovered' sur le conteneur des cartes.
+   */
+  cardSmall.addEventListener('mouseout', function () {
+    toggleClass(cardsContainer);
+  });
+}
