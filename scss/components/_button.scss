@@ -16,3 +16,24 @@ button {
     opacity: 0.75;
   }
 }
+
+.btn-green {
+  height: 35px;
+  font-size: 1.6rem;
+  color: var(--clr-white);
+  border-radius: 5px;
+  border-color: var(--clr-green);
+  background-color: var(--clr-green);
+  padding: 0 16px;
+}
+
+.btn-gold{
+  color: var(--clr-white);
+  background-color: var(--clr-gold);
+  border-color: var(--clr-gold);
+}
+
+.btn-white{
+  border-color: var(--clr-black);
+  background-color: var(--clr-white);
+}

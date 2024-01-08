@@ -60,7 +60,6 @@ body {
             height: 100%;
             padding: 0 10px;
             text-decoration: none;
-            // background-color: aliceblue; //dev
             color: var(--clr-black);
 
             &:hover {
@@ -68,111 +67,6 @@ body {
             }
           }
         }
-      }
-    }
-
-    button.btn-green {
-      height: 35px;
-      font-size: 1.6rem;
-      color: var(--clr-white);
-      border-radius: 5px;
-      border-color: var(--clr-green);
-      background-color: var(--clr-green);
-      padding: 0 16px;
-    }
-
-    // nav mobile button
-    #menu-toggler {
-      display: inline-block;
-      display: none;
-      position: relative;
-      width: 24px;
-      height: 24px;
-      border: none;
-      top: 0px;
-      background-color: transparent;
-      margin-left: 30px;
-      margin-top: auto;
-      margin-bottom: auto;
-      font-size: 0;
-      padding: 0;
-    }
-
-    .btn-mobile-nav__line {
-      position: absolute;
-      height: 2px;
-      width: 100%;
-      top: 10px;
-      left: 0px;
-      display: inline-block;
-      transition: all 0.3s;
-      background-color: var(--clr-black);
-      color: var(--clr-white);
-    }
-
-    .btn-mobile-nav__line:first-of-type {
-      top: 0;
-    }
-
-    .btn-mobile-nav__line:nth-of-type(3) {
-      top: 21px;
-    }
-
-    .btn-mobile-nav.active .btn-mobile-nav__line:first-of-type {
-      transform: translateY(10px) rotate(135deg);
-    }
-
-    .btn-mobile-nav.active .btn-mobile-nav__line {
-      transform: scale(0);
-      transition: 0.3s;
-    }
-
-    .btn-mobile-nav.active .btn-mobile-nav__line:nth-of-type(3) {
-      transform: translateY(-11px) rotate(-135deg);
-    }
-
-    // responsive mobile
-    @media screen and (max-width: 630px) {
-      #menu-toggler {
-        display: inline-block;
-      }
-      nav {
-        background-color: var(--clr-light-blue);
-        margin: 0;
-        padding: 20px;
-        position: fixed;
-        top: var(--header-height);
-        left: 100vw;
-        width: 100vw;
-        min-width: 100vw;
-        bottom: 0;
-        display: block;
-        font-size: 18px;
-        transform: translateX(100vw);
-        z-index: 999;
-        ul {
-          --gap: 20px;
-          flex-direction: column;
-          gap: var(--gap);
-          margin-top: var(--gap);
-          li {
-            width: 100%;
-            a {
-              display: flex;
-              justify-content: center;
-              &:hover {
-                border-radius: 5px;
-                text-decoration: none;
-                background-color: var(--clr-green);
-                color: var(--clr-white);
-              }
-            }
-          }
-        }
-      }
-      nav.open {
-        transition: transform 0.5s ease;
-        transform: translateX(-100vw);
       }
     }
   }
