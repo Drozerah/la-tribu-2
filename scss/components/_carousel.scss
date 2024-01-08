@@ -1,0 +1,55 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the carousel component.
+// -----------------------------------------------------------------------------
+
+// carousel
+#carousel {
+  position: relative;
+  margin-top: 3.3rem;
+  display: flex;
+  overflow: scroll;
+  gap: 3.6rem;
+  padding-bottom: 2rem;
+  overscroll-behavior-x: contain;
+  margin-bottom: 100px;
+  z-index: 2;
+
+  &:not(:hover) {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &:not(:hover)::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    padding: 3.2rem;
+    border-radius: 1rem;
+    width: 100%;
+    min-width: 273px;
+    background-color: var(--clr-light-gray);
+    gap: 0.8rem;
+
+    &__img {
+      display: block;
+      border-radius: 0.5rem;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-height: 132px;
+    }
+
+    &__name {
+      font-size: 2.4rem;
+      font-family: var(--ff-avenir-heavy-700);
+    }
+
+    &__icon {
+      display: flex;
+      gap: 2.1rem;
+    }
+  }
+}

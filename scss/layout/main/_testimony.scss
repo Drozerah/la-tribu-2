@@ -1,0 +1,160 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the testimony section.
+// -----------------------------------------------------------------------------
+
+@use "../../abstracts/variables" as *;
+
+section.testimony {
+  background-color: var(--clr-light-gray);
+  padding-bottom: 4rem;
+  position: relative;
+
+  .container {
+    margin: 0 auto;
+    position: relative;
+  }
+
+  header {
+    padding-top: 5.8rem;
+  }
+
+  .subtitle {
+    width: 100%;
+    max-width: 605px;
+    line-height: 1.25;
+  }
+
+  .card-wrapper {
+    position: relative;
+    display: flex;
+    overflow-y: scroll;
+    gap: 10px;
+    padding-bottom: 2rem;
+    padding: 45px 35px;
+    overscroll-behavior-x: contain;
+    &:not(:hover) {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    &:not(:hover)::-webkit-scrollbar {
+      display: none;
+    }
+    .card {
+      position: relative;
+      z-index: 1;
+      --gap: 32px;
+      display: flex;
+      width: 100%;
+      min-width: 550px;
+      padding: var(--gap);
+      border-radius: 10px;
+      background-color: var(--clr-white);
+      box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.1);
+      gap: var(--gap);
+
+      &__img {
+        width: 184px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 5px;
+      }
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        &__title {
+          font-size: 2.5rem;
+          font-family: var(--ff-avenir-heavy-700);
+        }
+
+        &__subtitle {
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          font-family: var(--ff-avenir-heavy-700);
+        }
+
+        &__description {
+          font-size: 1rem;
+        }
+
+        &__text {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    #card-right {
+      position: absolute;
+      top: 42px;
+      left: 523px;
+      width: 100%;
+      max-width: 366px;
+      padding: 21px;
+      gap: 8px;
+      z-index: 0;
+      img {
+        width: 122.444px;
+      }
+    }
+
+    #card-right .card {
+      &__content {
+        gap: 5px;
+
+        &__title {
+          font-size: 1.6rem;
+        }
+
+        &__subtitle {
+          font-size: 0.8rem;
+        }
+
+        &__description {
+          font-size: 0.6rem;
+        }
+
+        &__text {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    // responsive mobile
+    @media screen and (max-width: $mobile) {
+      margin: 0 32px;
+      gap: 25px;
+      padding: 42px 0px 10px 0px;
+      .card {
+        align-items: center;
+        --gap: 22px;
+        box-shadow: none;
+        flex-direction: column;
+        min-width: 221px;
+        margin-bottom: 5px;
+        img {
+          height: 124.042px;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 447px;
+    height: 559px;
+    top: -362px;
+    left: var(--spice-left);
+    border-bottom: 1px solid var(--clr-light-gray);
+    background-image: url("/img/spice-bg.webp");
+    background-repeat: no-repeat;
+    transform: rotate(287deg);
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+}

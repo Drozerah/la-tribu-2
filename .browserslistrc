@@ -1,0 +1,7 @@
+# Browsers that we support
+# https://github.com/browserslist/browserslist#queries
+# Run npx browserslist in a project directory to see which browsers were selected by your queries.
+
+last 2 version
+> 1%
+not dead # no browsers without security updates

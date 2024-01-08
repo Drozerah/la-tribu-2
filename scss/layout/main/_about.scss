@@ -1,0 +1,192 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the about section.
+// -----------------------------------------------------------------------------
+
+@use "../../abstracts/variables" as *;
+
+section.about{
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+
+  .wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 44%;
+    padding-right: 1.6rem;
+    justify-content: center;
+
+    header{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-bottom: none;
+
+      .surtitle{
+        font-size: 1.8rem;
+        font-family: var(--ff-avenir-heavy-700);
+      }
+
+      .title{
+        font-family: var(--ff-avenir-light-400);
+        font-size: 2.4rem;
+      }
+
+      .subtitle{
+        font-size: 3.6rem;
+        line-height: 3.9636rem;
+        font-family: var(--ff-avenir-heavy-700);
+      }
+
+      .surtitle, .title, .subtitle{
+        margin-bottom: 1.6rem;
+      }
+
+    }
+    .cta{
+
+      .btn-group{
+        display: flex;
+        gap: 1.6rem;
+        margin: 4.8rem 0px;
+
+        button{
+          padding-top: 1.8rem;
+        }
+
+        .btn__gold{
+          color: var(--clr-white);
+          background-color: var(--clr-gold);
+          border-color: var(--clr-gold);
+        }
+
+        .btn__white{
+          border-color: var(--clr-black);
+          background-color: var(--clr-white);
+        }
+      }
+
+      .info-group{
+        display: flex;
+        gap: .9rem;
+        align-items: center;
+        padding-bottom: 4.8rem;
+        border-bottom: 1px solid var(--clr-light-gray);
+        .info-icon{
+          --size: 3.6rem;
+          width: var(--size);
+          height: var(--size);
+        }
+        a{
+          font-family: var(--ff-avenir-black-900);
+          color: var(--clr-black);
+        }
+      }
+    }
+  }
+
+  
+  .aside{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+
+    .product{
+      position: relative;
+      --size: 50vw;
+      width: var(--size);
+      height: var(--size);
+      max-width: 562px;
+      max-height: 559px;
+      border-radius: 15px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("/img/unsplash-bg.webp");
+      z-index: 1;
+
+      &::after{
+        --value:-4vw;
+        position: absolute;
+        top: var(--value);
+        bottom: var(--value);
+        left: 0;
+        right: 0;
+        background: url("/img/unsplash.webp");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 114%;
+        z-index: 2;
+        content: "";
+      }
+
+      &__card {
+        --offset: 3vw;
+        position: absolute;
+        bottom: var(--offset);
+        left: calc(var(--offset) * -1);
+        max-width: 253px;
+        padding: 3.2rem;
+        font-family: var(--ff-inter-700);
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        color: var(--clr-white);
+        border-radius: 5px;
+        background-color: var(--clr-brow);
+        z-index: 3;
+      }
+    }
+  }
+
+  // responsive
+  @media screen and (max-width: 800px) {
+    .product{
+      --size: 45vw;
+    }
+  }
+
+  // responsive
+  @media screen and (max-width: 735px) {
+    flex-direction: column;
+    .wrapper{
+      width: 100%;
+      padding-right: 0;
+    }
+    .aside{
+      justify-content: start;
+      margin-top: 55px;
+      .product{
+        --offset-x: 35px;
+        min-width: calc(100% - var(--offset-x));
+        margin-left: var(--offset-x);
+        &__card{
+          --offset: var(--offset-x);
+        }
+        &::after{
+          background-size: 59%;
+          background-position: 85%;
+        }
+      }
+    }
+  }
+
+  // responsive mobile
+  @media screen and (max-width: $mobile) {
+    .aside{
+      .product{
+        &__card{
+          font-size: 9.526px;
+          line-height: 150%;
+          max-width: 156px;
+          &__icon{
+            width: 12.928px;
+            height: 11.567px;
+          }
+        }
+      }
+    }
+  }
+}

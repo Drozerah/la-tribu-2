@@ -1,0 +1,18 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+button {
+  font-family: var(--ff-inter-700);
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: normal;
+  padding: 1.6rem;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.75;
+  }
+}

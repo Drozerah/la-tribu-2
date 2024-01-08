@@ -1,0 +1,81 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+@use "./reset" as *;
+@use "../abstracts/variables" as *;
+// https://sass-lang.com/documentation/breaking-changes/css-vars/
+// #{}
+
+:root {
+  --base-font-size: 10px;
+  --container-max-width: 1140px;
+  --header-height: 95px;
+  --container-padding-left-right: 32px;
+  --spice-left: 0px;
+
+  --clr-black: #1a1a1a;
+  --clr-white: #ffffff;
+  --clr-light-gray: #f4f4f4;
+  --clr-light-blue: aliceblue;
+  --clr-brow: #382213;
+  --clr-gold: #c39f65;
+  --clr-green: #97cb29;
+
+  --ff-avenir-regular-400: "avenir_regular";
+  --ff-avenir-light-400: "avenir_light";
+  --ff-avenir-heavy-700: "avenir_heavy";
+  --ff-avenir-black-900: "avenir_black";
+  --ff-inter-700: "Inter", sans-serif;
+}
+
+// responsive mobile
+@media screen and (max-width: $mobile) {
+  :root {
+    --base-font-size: 6.3px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+h1,
+h2 {
+  color: var(--clr-gold);
+  font-size: 1.8rem;
+}
+
+html {
+  font-size: var(--base-font-size);
+  scroll-behavior: smooth;
+  scroll-padding-top: 115px;
+  position: relative;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%; // full viewport width
+  min-height: 100vh; // minimum full viewport height
+  color: var(--clr-black);
+  font-size: 1.6rem;
+  font-family: var(--ff-avenir-regular-400);
+  background: var(--clr-white);
+}
+
+main {
+  width: 100%;
+  margin-top: calc(var(--header-height) + 70px);
+  @media screen and (max-width: 630px) {
+    margin-top: calc(var(--header-height) + 40px);
+  }
+}
