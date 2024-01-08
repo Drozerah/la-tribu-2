@@ -8,6 +8,29 @@ section.testimony {
   background-color: var(--clr-light-gray);
   padding-bottom: 4rem;
   position: relative;
+  margin-top: 100px;
+
+  @media screen and (max-width: 800px) {
+    margin-top: 20px;
+  }
+
+  // handle spice bg element
+  &::before {
+    content: "";
+    position: absolute;
+    width: 447px;
+    height: 559px;
+    top: -362px;
+    left: var(--spice-left);
+    border-bottom: 1px solid var(--clr-light-gray);
+    background-image: url("/img/spice-bg.webp");
+    background-repeat: no-repeat;
+    transform: rotate(287deg);
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
 
   .container {
     margin: 0 auto;
@@ -52,10 +75,9 @@ section.testimony {
       padding: var(--gap);
       border-radius: 10px;
       background-color: var(--clr-white);
-      box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.1);
       gap: var(--gap);
       transition: all 0.3s ease;
-
+      box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.1);
       &__img {
         width: 184px;
         height: auto;
@@ -99,6 +121,7 @@ section.testimony {
       margin: 0 32px;
       gap: 25px;
       padding: 42px 0px 10px 0px;
+      margin-bottom: 20px;
       .card {
         align-items: center;
         --gap: 22px;
@@ -114,13 +137,21 @@ section.testimony {
       }
     }
 
-    @media screen and (max-width: 930px) {
+    @media screen and (max-width: 1049px) {
+      padding-bottom: 20px;
+      padding-left: 0px;
+      padding-right: 0px;
+      margin: 0 32px 15px 32px;
+
+      .card{
+        box-shadow: none;
+      }
       .card-small {
         transform: scale(1);
       }
     }
 
-    @media screen and (min-width: 930px) {
+    @media screen and (min-width: 1050px) {
       overflow: hidden;
       .card-small {
         left: -174px;
@@ -129,9 +160,12 @@ section.testimony {
   }
 
   #testimony-cards.hovered {
-    @media screen and (min-width: 930px) {
+    @media screen and (min-width: 1050px) {
       --offset: -172px;
       overflow: visible;
+      .card{
+        box-shadow: none;
+      }
       .card-small {
         transform: scale(1) translateX(var(--offset));
         z-index: 1;
@@ -143,20 +177,59 @@ section.testimony {
     }
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 447px;
-    height: 559px;
-    top: -362px;
-    left: var(--spice-left);
-    border-bottom: 1px solid var(--clr-light-gray);
-    background-image: url("/img/spice-bg.webp");
-    background-repeat: no-repeat;
-    transform: rotate(287deg);
+  .aside-wrapper{
+    --aside-width: 296px;
+    --gap: 32px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--clr-white);
+    height: 600px;
+    padding: var(--gap);
+    .aside{
+      display: flex;
+      padding: var(--gap);
+      justify-content: center;
+      flex-direction: column;
+      gap: calc(var(--gap) / 2);
+      color: var(--clr-white);
+      width: 100%;
+      max-width: 423px;
+      height: 100%;
+      border-radius: 10px;
+      background-image: url("/public/img/cards/recipes/aside-recipe-bg.webp");
+      background-blend-mode: screen, normal;
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.15);
+      .surtitle{
+        font-size: 1.8rem;
+      }
 
-    @media screen and (max-width: 800px) {
-      display: none;
+      .title{
+        font-size: 3.6rem;
+      }
+
+      img{
+        border-radius: 5px;
+      }
+
+      button{
+        font-size: 1.6rem;
+        
+      }
+
+    }
+    @media screen and (min-width: 1050px) {
+      padding: 0px;
+      position: absolute;
+      right: var(--testinomy-aside-right);
+      transform: translateY(-540px);
+      background-color: transparent;
+      .aside{
+        button{
+          max-width: 263px;
+        }
+      }
     }
   }
 }

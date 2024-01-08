@@ -164,3 +164,38 @@ export function initTestimonyCards() {
     toggleClass(cardsContainer);
   });
 }
+
+
+/**
+ * Initialise la position de l'élément aside du témoignage en fonction de la bordure droite de la fenêtre.
+ *
+ * @param {HTMLElement} element - L'élément DOM représentant le témoignage.
+ */
+export function initTestimonyAside(element) {
+  // Vérifie si l'élément est défini
+  if (!element) {
+    console.error("initTestimonyAside: l'élément DOM spécifié est indéfini.");
+    return;
+  }
+  // Sélectionne l'élément racine du document
+  const root = document.querySelector(':root');
+  /**
+   * Obtient la position depuis la bordure droite de l'élément par rapport à la fenêtre.
+   *
+   * @param {HTMLElement} element - L'élément DOM dont on souhaite obtenir la position.
+   * @returns {number} La position depuis la bordure droite de la fenêtre.
+   */
+  const getElementLeftPosition = (element) => {
+    let right = element.getBoundingClientRect().right;
+    right = window.innerWidth - right;
+    return right;
+  }
+
+  // Initialise la position au chargement de la page
+  root.style.setProperty('--testinomy-aside-right', `${getElementLeftPosition(element)}px`);
+
+  // Met à jour la position lors du redimensionnement de la fenêtre
+  window.addEventListener('resize', () => {
+    root.style.setProperty('--testinomy-aside-right', `${getElementLeftPosition(element)}px`);
+  });
+}
