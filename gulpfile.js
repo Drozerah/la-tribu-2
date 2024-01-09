@@ -17,11 +17,11 @@ gulp.task('start', (done) => {
 * https://www.npmjs.com/package/gulp-webp
 */
 gulp.task('webp', (done) => {
-  gulp.src('./src/img/*.{jpg,png,ico,svg}')
+  gulp.src('./src/img/*.{jpg,jpeg,png,ico,svg}')
   .pipe(webp({
     preset: 'photo'
   }))
-  .pipe(gulp.dest('./img/'))
+  .pipe(gulp.dest('./src/img/webp/'))
   done()
 })
 
