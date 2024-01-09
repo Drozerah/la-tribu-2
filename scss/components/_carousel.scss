@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the carousel component.
 // -----------------------------------------------------------------------------
-
+@use "../abstracts/variables" as *;
 // carousel
 #carousel {
   position: relative;
@@ -28,15 +28,15 @@
     padding: 3.2rem;
     border-radius: 1rem;
     width: 100%;
-    min-width: 273px;
+    min-width: 138px;
     background-color: var(--clr-light-gray);
-    gap: 0.8rem;
+    gap: 1rem;
 
     &__img {
       display: block;
       border-radius: 0.5rem;
-      width: 100%;
-      height: auto;
+      height: 94.325px;
+      width: auto;
       object-fit: cover;
       max-height: 132px;
     }
@@ -49,6 +49,14 @@
     &__icon {
       display: flex;
       gap: 2.1rem;
+    }
+
+    @media screen and (min-width:$mobile) {
+      min-width: 273px;
+      gap: 0.8rem;
+      &__img{
+        height: 304px;
+      }        
     }
   }
 }
