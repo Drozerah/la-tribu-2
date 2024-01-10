@@ -36,6 +36,7 @@ footer {
           display: flex;
           justify-content: center;
           align-items: baseline;
+          border-radius: 5px;
           gap: 31px;
           width: 100%;
           max-width:  380px;
@@ -48,10 +49,11 @@ footer {
             margin-right: 20px;
           }
           a{
-            transition: opacity .3 ease;
             height: 25px;
+            opacity: 1;
+            transition: opacity .3s ease;
             &:hover{
-              opacity: .8;
+              opacity: .5;
             }
           }
         }
