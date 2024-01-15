@@ -79,8 +79,8 @@ body {
 
 main {
   width: 100%;
-  margin-top: calc(var(--header-height) + 70px);
+  margin-top: 70px;
   @media screen and (max-width: 630px) {
-    margin-top: calc(var(--header-height) + 40px);
+    margin-top:40px;
   }
 }
